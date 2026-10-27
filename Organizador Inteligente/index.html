@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizador de Estudos</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Cabeçalho Principal -->
+        <header class="profile-header">
+            <h1>Organizador de <span class="highlight">Estudos</span></h1>
+            <p class="subtitle">Gerencie seu conhecimento de forma prática</p>
+        </header>
+
+        <!-- Layout de Duas Colunas -->
+        <div class="conteudo-principal">
+            
+            <!-- Coluna da Esquerda (Formulário + Progresso) -->
+            <div class="coluna-esquerda">
+                <!-- Barra de Progresso e Métricas -->
+                <section class="bloco-card progresso-box">
+                    <div class="progresso-topo">
+                        <span>Progresso concluído</span>
+                        <span id="texto-progresso" class="highlight-bold">0%</span>
+                    </div>
+                    <div class="meter-bar">
+                        <div id="barra-preenchida" class="meter-fill" style="width: 0%;"></div>
+                    </div>
+                </section>
+
+                <!-- Formulário de Cadastro -->
+                <section class="bloco-card">
+                    <h2 class="titulo-secao">Cadastrar Atividade</h2>
+                    <form id="form-tarefa">
+                        
+                        <div class="grupo-form">
+                            <label>Título da Atividade</label>
+                            <input type="text" id="input-nome" required placeholder="Ex: Prova de Matemática">
+                        </div>
+
+                        <div class="linha-dupla">
+                            <div class="grupo-form">
+                                <label>Matéria</label>
+                                <input type="text" id="input-materia" required placeholder="Ex: Matemática">
+                            </div>
+
+                            <div class="grupo-form">
+                                <label>Horas de Dedicação</label>
+                                <input type="number" id="input-horas" placeholder="Ex: 3" min="0" step="0.5">
+                            </div>
+                        </div>
+
+                        <div class="linha-tripla">
+                            <div class="grupo-form">
+                                <label>Nota Esperada</label>
+                                <input type="text" id="input-nota" placeholder="Ex: 9.0">
+                            </div>
+
+                            <div class="grupo-form">
+                                <label>Data Limite</label>
+                                <input type="date" id="input-data" required>
+                            </div>
+
+                            <div class="grupo-form">
+                                <label>Prioridade</label>
+                                <select id="input-prioridade">
+                                    <option value="Baixa">Baixa</option>
+                                    <option value="Média" selected>Média</option>
+                                    <option value="Alta">Alta</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-principal">Adicionar Atividade</button>
+                    </form>
+                </section>
+            </div>
+
+            <!-- Coluna da Direita (Lista de Atividades) -->
+            <div class="coluna-direita">
+                <section class="bloco-card altura-total">
+                    <div class="cabecalho-lista">
+                        <h2 class="titulo-secao">Minhas Atividades de Estudos</h2>
+                    </div>
+
+                    <div id="container-tarefas" class="cards-list">
+                        <!-- As tarefas aparecem aqui dinamicamente -->
+                    </div>
+                </section>
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <p class="subtitle"> • Foco e resultados •</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
